@@ -7,7 +7,6 @@
 
             MusicPlayer player = new MusicPlayer();
 
-
             while (true)
             {
                 Console.WriteLine("1. Play all notes\n" +
