@@ -44,7 +44,7 @@
                     int frequency = (int)_musicalNotes[pair.Note];
                     Console.Beep(frequency, pair.Duration);
                 }
-                catch (KeyNotFoundException e)
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
