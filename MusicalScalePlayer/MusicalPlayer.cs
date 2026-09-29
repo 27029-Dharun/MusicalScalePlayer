@@ -53,9 +53,8 @@
 
         public void GetInput()
         {
-            int length;
             Console.Write("Enter the length of the notes: ");
-            length = GetInteger();
+            int length = GetInteger();
 
             Console.WriteLine("Enter the note the not one by one");
             List<(string Note, int Duration)> notes = new List<(string Note, int Duration)>();
@@ -65,7 +64,6 @@
                 Console.Write("Enter the note: ");
                 string note = Console.ReadLine() ?? string.Empty;
 
-
                 Console.Write("Enter the duration: ");
                 int duration = GetInteger();
 
@@ -73,9 +71,9 @@
             }
 
             Console.Write("Enter the number of times to repeat the notes: ");
-            length = GetInteger();
+            int loop = GetInteger();
 
-            for(int i = 0; i < length; i++)
+            for (int i = 0; i < loop; i++)
             {
                 this.PlayAvailableNote(notes);
             }
