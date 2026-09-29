@@ -55,10 +55,7 @@
         {
             int length;
             Console.Write("Enter the length of the notes: ");
-            while (!int.TryParse(Console.ReadLine(), out length))
-            {
-
-            }
+            length = GetInteger();
 
             Console.WriteLine("Enter the note the not one by one");
             List<(string Note, int Duration)> notes = new List<(string Note, int Duration)>();
@@ -70,16 +67,29 @@
 
 
                 Console.Write("Enter the duration: ");
-                int duration;
-                while (!int.TryParse(Console.ReadLine(), out duration))
-                {
-
-                }
+                int duration = GetInteger();
 
                 notes.Add((note, duration));
             }
 
-            this.PlayAvailableNote(notes);
+            Console.Write("Enter the number of times to repeat the notes: ");
+            length = GetInteger();
+
+            for(int i = 0; i < length; i++)
+            {
+                this.PlayAvailableNote(notes);
+            }
+        }
+
+        private static int GetInteger()
+        {
+            int length;
+            while (!int.TryParse(Console.ReadLine(), out length))
+            {
+                Console.WriteLine("Enter a valid integer.");
+            }
+
+            return length;
         }
     }
 }
